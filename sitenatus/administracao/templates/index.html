@@ -23,7 +23,7 @@
   <link href="{% static 'lib/owlcarousel/owl.carousel.css' %}" rel="stylesheet">
   <link href="{% static 'lib/owlcarousel/owl.transitions.css' %}" rel="stylesheet">
   <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
-  <link href="{% static 'lib/animate/animate.min.css1' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
   <link href="{% static 'lib/venobox/venobox.css' %}" rel="stylesheet">
 
   <!-- Nivo Slider Theme -->
@@ -66,9 +66,9 @@
 									</button>
                 <!-- Brand -->
                 <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                  <h1><span>e</span>Business</h1>
+                  <h1><span></span>Natus</h1>
                   <!-- Uncomment below if you prefer to use an image logo -->
-                  <!-- <img src="img/logo.png" alt="" title=""> -->
+                  <!-- <img src="{% static 'img/logo_branco.png' %}" alt="" title=""> -->
 								</a>
               </div>
               <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,7 +84,7 @@
                     <a class="page-scroll" href="#services">Serviços</a>
                   </li>
                   <li>
-                    <a class="page-scroll" href="#portfolio">Depoimentos</a>
+                    <a class="page-scroll" href="#testimonials-area">Depoimentos</a>
                   </li>
                   <li>
                     <a class="page-scroll" href="#contact">Contato</a>
@@ -119,16 +119,15 @@
               <div class="slider-content">
                 <!-- layer 1 -->
                 <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1">The Best Business Information </h2>
+                  <h2 class="title1"><Nav>Natus</Nav></h2>
                 </div>
                 <!-- layer 2 -->
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">We're In The Business Of Helping You Start Your Business</h1>
+                  <h1 class="title2">Desenvolvimento Humano e Organizacional</h1>
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                   <a class="ready-btn right-btn page-scroll" href="#services">Ver Serviços</a>
-                  <a class="ready-btn page-scroll" href="#about">Ler Mais</a>
                 </div>
               </div>
             </div>
@@ -152,8 +151,7 @@
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                  <a class="ready-btn right-btn page-scroll" href="#services">Ver Serviços</a>
                 </div>
               </div>
             </div>
@@ -177,8 +175,7 @@
                 </div>
                 <!-- layer 3 -->
                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                  <a class="ready-btn right-btn page-scroll" href="#services">Ver Serviços</a>
                 </div>
               </div>
             </div>
@@ -200,7 +197,7 @@
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="section-headline text-center">
-              <h2>Contact us</h2>
+              <h2>Contato</h2>
             </div>
           </div>
         </div>
@@ -211,7 +208,7 @@
               <div class="single-icon">
                 <i class="fa fa-mobile"></i>
                 <p>
-                  Call: +1 5589 55488 55<br>
+                  Celular: {{ config.0.phone_cel }}<br>
                   <span>Monday-Friday (9am-5pm)</span>
                 </p>
               </div>
@@ -223,8 +220,7 @@
               <div class="single-icon">
                 <i class="fa fa-envelope-o"></i>
                 <p>
-                  Email: info@example.com<br>
-                  <span>Web: www.example.com</span>
+                  Email: {{ config.0.email }}<br>
                 </p>
               </div>
             </div>
@@ -235,8 +231,7 @@
               <div class="single-icon">
                 <i class="fa fa-map-marker"></i>
                 <p>
-                  Location: A108 Adam Street<br>
-                  <span>NY 535022, USA</span>
+                  Location: {{ config.0.localizacao }}<br>
                 </p>
               </div>
             </div>
@@ -246,9 +241,27 @@
 
           <!-- Start Google Map -->
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <!-- Start Map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <!-- End Map -->
+            <div class="footer-content">
+              <div class="footer-head">
+                <div class="footer-logo">
+                 <img src="{% static 'img/logo_original.png' %}" alt="" title="">
+                </div>
+
+                <div class="footer-icons">
+                  <ul>
+                    <li>
+                      <a href="{{ config.0.facebook }}"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ config.0.twitter }}"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ config.0.instagram }}"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- End Google Map -->
 
@@ -287,56 +300,7 @@
 
   <!-- Start Footer bottom Area -->
   <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h2><span>e</span>Business</h2>
-                </div>
-
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>information</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> +123 456 789</p>
-                  <p><span>Email:</span> contact@example.com</p>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-        </div>
-      </div>
-    </div>
+    
     <div class="footer-area-bottom">
       <div class="container">
         <div class="row">

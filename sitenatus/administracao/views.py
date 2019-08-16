@@ -13,6 +13,5 @@ class HomeView(TemplateView):
         context['depoiments_list'] = Depoimentos.objects.all()
         context['services_list'] = Servicos.objects.all()
         context['events_list'] = Eventos.objects.all()
-        context['config'] = Configuracao.objects.get_or_create(id=1)
-
+        context['config'] = Configuracao.objects.get_or_create(id=2)
         return context

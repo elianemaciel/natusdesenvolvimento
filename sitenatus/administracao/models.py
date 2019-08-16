@@ -20,6 +20,7 @@ class Servicos(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Eventos(models.Model):
     nome = models.CharField(max_length=200)
     descricao = models.TextField()
@@ -31,6 +32,7 @@ class Eventos(models.Model):
 
     def __str__(self):
         return self.nome
+
 
 class Configuracao(models.Model):
     nome_empresa = models.CharField(max_length=200)
