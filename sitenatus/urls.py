@@ -24,3 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view()),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
