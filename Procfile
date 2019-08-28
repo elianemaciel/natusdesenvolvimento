@@ -1,1 +1,1 @@
-web: gunicorn sitenatus/sitenatus.wsgi
+web: gunicorn sitenatus.wsgi
