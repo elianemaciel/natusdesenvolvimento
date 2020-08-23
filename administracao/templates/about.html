@@ -1,56 +1,25 @@
 {% load static %}
 <!-- Start About area -->
-<div id="about" class="about-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Sobre</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- single-well start-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-left">
-            <div class="single-well">
-              <a href="#">
-			    <img src="{% static 'img/about/1.jpg' %}" alt="">
-			    </a>
-            </div>
-          </div>
-        </div>
-        <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-middle">
-            <div class="single-well">
-              <a href="#" class="layer-1-1 wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
-                <h4 class="sec-head">{{ config.0.nome_empresa }}</h4>
-              </a>
-              <p class="layer-1-2 wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".3s">
-                {{ config.0.sobre }}
-              </p>
-              
-            </div>
-          </div>
-        </div>
-        <!-- End col-->
-        <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-middle">
-            <div class="single-well">
-              <a href="#" class="layer-1-1 wow fadeInRight" data-wow-duration="3s" data-wow-delay=".3s">
-                <h4 class="sec-head">Valores</h4>
-              </a>
-              <p class="layer-1-2 wow fadeInLeft" data-wow-duration="3s" data-wow-delay=".2s">
-                {{ config.0.valor }}
-              </p>
-              
-            </div>
-          </div>
-        </div>
-        <!-- End col-->
-      </div>
+<section id="about">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header wow fadeInUp">
+      <div class="col-md-12">
+      <h3>Sobre</h3>
+      {{ config.0.sobre }}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    </header>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Sobre a Fundadora</h3>
+      {{ config.0.sobre_fundadora }}
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="col-md-4">
+      <img class="img-fluid" src="{% static 'img/LAZA0357.jpg' %}">
     </div>
   </div>
-  <!-- End About area -->
+</div>
+</section><!-- End About Us Section -->

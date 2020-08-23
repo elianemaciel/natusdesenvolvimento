@@ -1,0 +1,35 @@
+{
+  "name": "natusdesenvolvimento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elianemaciel/natusdesenvolvimento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elianemaciel/natusdesenvolvimento/issues"
+  },
+  "homepage": "https://github.com/elianemaciel/natusdesenvolvimento#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "bootstrap-sass": "^3.4.1",
+    "bootstrap-scss": "^4.5.0",
+    "compass": "^0.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "css-loader": "^4.2.1",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1"
+  },
+  "sass": "stylesheets/sass",
+  "style": "static/css"
+}

@@ -1,50 +1,30 @@
 {% load static %}
 <!-- Start Testimonials -->
-  <div class="testimonials-area">
-    <div class="testi-inner area-padding">
-      <div class="testi-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <!-- Start testimonials Start -->
-            <div class="testimonial-content text-center">
-              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
-              <!-- start testimonial carousel -->
-              <div class="testimonial-carousel">
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Boby</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Jhon</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
-                    </p>
-                    <h6>Fleming</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-              </div>
-            </div>
-            <!-- End testimonials end -->
-          </div>
-          <!-- End Right Feature -->
-        </div>
+<section id="testimonials" class="section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h3>Depoimentos</h3>
+    </header>
+
+    <div class="owl-carousel testimonials-carousel">
+
+      {% for depoimento in depoiments_list%}
+      <div class="testimonial-item">
+        <img src="{{ depoimento.image.url }}" class="testimonial-img" alt="">
+        <h3>{{ depoimento.nome }}</h3>
+        <h4>{{ depoimento.funcao }}</h4>
+        <p>
+          <img src="{% static 'img/quote-sign-left.png" class="quote-sign-left" alt="">
+          {{ depoimento.texto }}
+          <img src="{% static 'img/quote-sign-right.png" class="quote-sign-right" alt="">
+        </p>
       </div>
+      {% endfor %}
+
     </div>
+
   </div>
+</section>
+
   <!-- End Testimonials -->

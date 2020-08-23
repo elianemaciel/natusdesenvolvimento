@@ -1,35 +1,24 @@
 {% load static %}
-<!-- Start Service area -->
-<div id="services" class="services-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline services-head text-center">
-            <h2>Serviços</h2>
-          </div>
-        </div>
+
+<section id="services">
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header wow fadeInUp">
+      <h3>Serviços</h3>
+      <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+    </header>
+
+    <div class="row">
+      {% for service in services_list %}
+      <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
+        <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+        <h4 class="title"><a href="">{{ service.nome }}</a></h4>
+        <p class="description">{{ service.metodologia }}</p>
       </div>
-      <div class="row text-center">
-        <div class="services-contents">
-          <!-- Start Left services -->
-          {% for service in services_list %}
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details layer-1-1 wow fadeIn bounceIn" data-wow-duration="3s" data-wow-delay=".2s">
-                <div class="single-services">
-                  
-                  <h4>{{ service.nome }}</h4>
-                  <p>
-                    {{ service.metodologia }}
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
+      {% endfor %}
+      
     </div>
+
   </div>
-  <!-- End Service area -->
+</section><!-- End Services Section -->
+

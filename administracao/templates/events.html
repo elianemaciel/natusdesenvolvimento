@@ -1,0 +1,34 @@
+{% load static %}
+<section id="portfolio" class="section-bg">
+    <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+        <h3 class="section-title">Eventos</h3>
+    </header>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        
+      {% for item in events_list %}
+      <div class="col-lg-4 col-md-6 portfolio-item">
+        <div class="portfolio-wrap">
+          <figure>
+            <img src="{{ item.image.url }}" class="img-fluid" alt="">
+            <a href="{{ item.image.url }}" data-lightbox="portfolio" data-title="App 1" class="link-preview"><i class="ion ion-eye"></i></a>
+            <a href="{{ tem.link }}" class="link-details" title="Mais Detalhes"><i class="ion ion-android-open"></i></a>
+          </figure>
+
+          <div class="portfolio-info">
+            <h4><a href="{{ item.link }}">{{ item.title }}</a></h4>
+            <strong>{{ item.data_ini }} - {{ item.horario_ini }}</strong>
+            <p>{{ item.descricao }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+        <p>Acompanhe nossos eventos pelo Facebook!</p>
+
+      {% endfor %}
+    </div>
+
+    </div>
+  </section><!-- End Portfolio Section -->

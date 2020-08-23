@@ -1,4 +1,4 @@
-#!/home/eliane/natusdesenvolvimento/myvenv/bin/python3
+#!/home/eliane/Project/natusdesenvolvimento/myvenv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
