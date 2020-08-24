@@ -520,7 +520,6 @@ body {
   --------------------------------*/
   .section-header h3 {
     font-size: 32px;
-    color: #111;
     text-transform: uppercase;
     text-align: center;
     font-weight: 700;
@@ -661,7 +660,7 @@ body {
   /* About Us Section
   --------------------------------*/
   #about {
-    background-color: $background-color;
+    background-color: #f7f7f7;
     padding: 60px 0 40px 0;
     h1, h3 {
         color: $color1;
@@ -684,6 +683,10 @@ body {
     background: #fff;
     background-size: cover;
     padding: 60px 0 40px 0;
+
+    h1, h3 {
+      color: $color1;
+    }
   }
   
   #services .box {
@@ -709,7 +712,7 @@ body {
   }
   
   #services .title a {
-    color: #111;
+    color: $color2;
   }
   
   #services .box:hover .title a {
@@ -842,6 +845,7 @@ body {
   --------------------------------*/
   #portfolio {
     padding: 60px 0;
+    
   }
   
   #portfolio #portfolio-flters {
@@ -955,7 +959,6 @@ body {
     background: #fff;
     text-align: center;
     padding: 30px;
-    height: 90px;
     border-radius: 0 0 3px 3px;
   }
   
@@ -1109,6 +1112,9 @@ body {
   --------------------------------*/
   #testimonials {
     padding: 60px 0;
+    h1, h3 {
+      color: $color1;
+    }
   }
   
   #testimonials .section-header {
@@ -1415,14 +1421,17 @@ body {
   # Footer
   --------------------------------------------------------------*/
   #footer {
-    background: #000;
+    background: $footter;
     padding: 0 0 30px 0;
     color: #eee;
     font-size: 14px;
   }
+
+  #footer .footer-info img{
+    max-width: 100%;
+  }
   
   #footer .footer-top {
-    background: #111;
     padding: 60px 0 30px 0;
   }
   
@@ -1572,3 +1581,7 @@ body {
     color: #ddd;
   }
   
+
+h1, h3 {
+  color: $color1;
+}

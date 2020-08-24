@@ -1,11 +1,22 @@
 from django.contrib import admin
 from .models import *
 
-# Register your models here.
-
-admin.site.register(Configuracao)
+class ConfigAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Dados da Empresa', {
+            'fields': ('nome_empresa', ('ddd', 'phone_cel', 'phone_com'), ('rua', 'numero', 'cidade', 'pais')),
+        }),
+        ('Sobre', {
+            'fields': ('sobre', 'logo', 'imagem_fundadora', 'sobre_fundadora', 'frase'),
+        }),
+        ('Social', {
+            'fields': ('facebook', 'twitter', 'instagram', 'message_whatsapp'),
+        }),
+    )
+admin.site.register(Configuracao, ConfigAdmin)
 admin.site.register(Eventos)
 admin.site.register(Servicos)
 admin.site.register(Depoimentos)
+admin.site.register(Banner)
 
 admin.site.site_header = 'Natus Desenvolvimento Administração'

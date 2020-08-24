@@ -1,0 +1,84 @@
+{% load static %}
+<section id="contact" class="section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h3>Contato</h3>
+      </div>
+      {% for contato in config %}
+      <div class="row contact-info">
+
+        <!-- {% if contato.rua %}
+        <div class="col-md-4">
+          <div class="contact-address">
+            <i class="ion-ios-location-outline"></i>
+            <h3>Endereço</h3>
+            <address>{{ contato.rua }} {{ contato.numero }}, {{ contato.cidade }}, {{ contato.pais }}</address>
+          </div>
+        </div>
+        {% endif %} -->
+
+        <div class="col-md-4">
+          <div class="contact-phone">
+            <i class="ion-ios-telephone-outline"></i>
+            <h3>Telefone</h3>
+            <p><a href="tel:{{ contato.phone_com }}">({{ contato.ddd }}) {{ contato.phone_com }}</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-email">
+            <i class="ion-ios-email-outline"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:{{ contato.email }}">{{ contato.email }}</a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-social-whatsapp"></i>
+              <h3>Whatsapp</h3>
+              <p><a target="_blank" href="https://api.whatsapp.com/send?phone={{ contato.phone_cel }}&text=
+                {{ contato.message_whatsapp }}">{{ contato.phone_cel|phone2numeric }}</a></p>
+            </div>
+          </div>
+
+      </div>
+      {% endfor %}
+
+      <div class="form">
+        <form action="{% url 'email' %}" method="post" role="form" id="from_post_email" class="php-email-form">
+          <div class="form-row">
+            {% csrf_token %} 
+            <div class="form-group col-md-6">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" />
+              <div class="validate"></div>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="email" class="form-control" name="from_email" id="email" placeholder="Seu Email" data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensagem"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Sua Mensagem foi enviada. Obrigado!</div>
+          </div>
+          <div class="text-center"><button type="submit">Enviar</button></div>
+        </form>
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+<script>
+    $('#from_post_email').submit(function() {
+        $.post({
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+        })
+    });
+</script>

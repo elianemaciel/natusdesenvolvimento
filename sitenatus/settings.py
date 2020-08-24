@@ -25,7 +25,7 @@ SECRET_KEY = '(m(n!_be^8^jie!*i02toldb_gdii$7&qwsc-!m2uql8$q#hq!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.natusdesenvolvimento.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -134,3 +134,18 @@ django_heroku.settings(locals())
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# EMAIL_HOST:  'localhost'
+# EMAIL_PORT: 25
+# EMAIL_HOST_USER: (Empty string)
+# EMAIL_HOST_PASSWORD: (Empty string)
+# EMAIL_USE_TLS: False
+# EMAIL_USE_SSL: False
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = 'eliane.faveron@gmail.com'
+EMAIL_HOST_PASSWORD = 'Eli@1901'

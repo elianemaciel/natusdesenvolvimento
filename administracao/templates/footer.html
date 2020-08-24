@@ -1,0 +1,51 @@
+{% load static %}
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          {% for conf in config %}
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="{{ conf.logo.url }}" alt="">
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Sobre</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Serviços</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contato</h4>
+            <p>
+              <strong>Telefone:</strong>{{ conf.phone_com|phone2numeric }}<br>
+              <strong>Email:</strong>{{ conf.email }}<br>
+              {{ conf.rua|default_if_none:"" }}<br>
+              {{ conf.cidade|default_if_none:"" }}<br>
+              {{ conf.pais|default_if_none:"" }}<br>
+            </p>
+
+            <div class="social-links">
+              <a href="{{ conf.facebook }}" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="{{ conf.instagram }}" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="{{ conf.linkedin }}"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Desenvolvido por <a href="#">Eliane Faveron</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
