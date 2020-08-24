@@ -23,7 +23,6 @@ class HomeView(TemplateView):
         return context
 
 def send_email(request):
-    import ipdb; ipdb.set_trace()
     subject = 'Teste'
     message = request.POST.get('message', '')
     from_email = request.POST.get('from_email', '')
@@ -31,7 +30,7 @@ def send_email(request):
     to_email = ["eliane.faveron@gmail.com"]
     if subject and message and from_email:
         try:
-            send_email(subject, message, from_email, ["eliane.faveron@gmail.com"])
+            send_email(subject, message, from_email, ["eifmaciel@ucs.br"])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return HttpResponseRedirect('/contact/thanks/')

@@ -4,7 +4,7 @@ from .models import *
 class ConfigAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Dados da Empresa', {
-            'fields': ('nome_empresa', ('ddd', 'phone_cel', 'phone_com'), ('rua', 'numero', 'cidade', 'pais')),
+            'fields': ('nome_empresa', ('ddd', 'phone_cel', 'phone_com'), 'email',('rua', 'numero', 'cidade', 'pais')),
         }),
         ('Sobre', {
             'fields': ('sobre', 'logo', 'imagem_fundadora', 'sobre_fundadora', 'frase'),
