@@ -8,4 +8,3 @@ Pillow==7.2.0
 pytz==2019.2
 sqlparse==0.3.0
 whitenoise==4.1.3
-EQwcm#H9%lAf
