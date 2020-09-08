@@ -13,10 +13,18 @@ class ConfigAdmin(admin.ModelAdmin):
             'fields': ('facebook', 'twitter', 'instagram', 'message_whatsapp'),
         }),
     )
+
+class ListServicosAdmin(admin.TabularInline):
+    model = ListServicos
+
+class ServicosAdmin(admin.ModelAdmin):
+   inlines = [ListServicosAdmin,]
+
+
 admin.site.register(Configuracao, ConfigAdmin)
 admin.site.register(Eventos)
-admin.site.register(Servicos)
+admin.site.register(Servicos, ServicosAdmin)
 admin.site.register(Depoimentos)
 admin.site.register(Banner)
 
-admin.site.site_header = 'Natus Desenvolvimento Administração'
+admin.site.site_header = 'Natus Desenvolvimento Humano e Organizacional - Administração'

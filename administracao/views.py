@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
+from datetime import datetime
 
 from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner
 
@@ -15,9 +16,12 @@ class HomeView(TemplateView):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
+        
+        today = datetime.today().date()
+        # import ipdb; ipdb.set_trace()
         context['depoiments_list'] = Depoimentos.objects.all()
         context['services_list'] = Servicos.objects.all()
-        context['events_list'] = Eventos.objects.all()
+        context['events_list'] = Eventos.objects.filter(data_ini__gte=today)[0:10]
         context['config'] = Configuracao.objects.all()
         context['banner'] = Banner.objects.all()
         return context

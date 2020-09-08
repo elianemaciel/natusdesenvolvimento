@@ -9,7 +9,7 @@
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         
       {% for item in events_list %}
-      <div class="col-lg-4 col-md-6 portfolio-item">
+      <div class="col-lg-6 col-md-6 portfolio-item">
         <div class="portfolio-wrap">
           <figure>
             <img src="{{ item.image.url }}" class="img-fluid" alt="">
@@ -19,8 +19,21 @@
 
           <div class="portfolio-info">
             <h4><a href="{{ item.link }}">{{ item.title }}</a></h4>
-            <strong>{{ item.data_ini }} - {{ item.horario_ini }}</strong>
-            <p>{{ item.descricao }}</p>
+            {% if item.date_fim %}
+            <strong>{{ item.data_ini|date:'d/m/y' }} a {{ item.date_fim|date:'d/m/y' }}</strong>
+            {% else %}
+            <strong>{{ item.data_ini|date:'d/m/y' }}</strong>
+            {% endif %}
+            <br />
+            {% if item.horario_fim %}
+            <p>Horário: {{ item.horario_ini }} às {{ item.horario_fim }}</p>
+            {% else %}
+            <p>{{ item.horario_ini }}</p>
+            {% endif %}
+            {% if item.ministrantes %}
+            <p>Ministrantes: {{ item.ministrantes }}</p>
+            {% endif %}
+            <p>{{ item.descricao| default:"" }}</p>
           </div>
         </div>
       </div>

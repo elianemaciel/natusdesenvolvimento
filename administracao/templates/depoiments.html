@@ -11,9 +11,9 @@
 
       {% for depoimento in depoiments_list%}
       <div class="testimonial-item">
-        <img src="{{ depoimento.image.url }}" class="testimonial-img" alt="">
+        <!-- <img src="{{ depoimento.image.url }}" class="testimonial-img" alt=""> -->
         <h3>{{ depoimento.nome }}</h3>
-        <h4>{{ depoimento.funcao }}</h4>
+        <h4>{{ depoimento.funcao|default:"" }}</h4>
         <p>
           <img src="{% static 'img/quote-sign-left.png" class="quote-sign-left" alt="">
           {{ depoimento.texto }}

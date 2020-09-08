@@ -5,7 +5,12 @@ from django.utils import timezone
 class Banner(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.CharField(max_length=400)
-    imagem = models.ImageField()
+    imagem = models.ImageField(upload_to = 'banner/')
+
+    class Meta:
+        verbose_name="Banner"
+        verbose_name_plural = "Banners"
+
 
 class Depoimentos(models.Model):
     nome = models.CharField(max_length=200)
@@ -17,25 +22,45 @@ class Depoimentos(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name="Depoimento"
+        verbose_name_plural = "Depoimentos"
 
 
 class Servicos(models.Model):
-    nome = models.CharField(max_length=200)
-    metodologia = models.TextField()
-    icon = models.CharField(max_length=50)
+    nome = models.CharField(max_length=200, verbose_name="Titulo",)
+    metodologia = models.TextField(verbose_name="Metodologia")
+    icon = models.CharField(
+        max_length=50, verbose_name="Icone", default="ion-ios-paper-outline")
+    list_name = models.CharField(max_length=200, verbose_name="Titulo para check list", null=True, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.nome
+    
+    class Meta:
+        verbose_name="Serviço"
+        verbose_name_plural = "Serviços"
+
+
+class ListServicos(models.Model):
+    descricao = models.CharField(max_length=200)
+    servico = models.ForeignKey(Servicos, on_delete="SET NULL", related_name="list_service")
+
+    class Meta:
+        verbose_name="Lista de itens"
+        verbose_name_plural = "Listas de itens"
 
 
 class Eventos(models.Model):
-    title = models.CharField(max_length=400)
-    descricao = models.TextField()
-    data_ini = models.DateField()
-    data_fim = models.DateField()
-    horario_ini = models.TimeField()
-    horario_fim = models.TimeField()
+    title = models.CharField(max_length=400, verbose_name="Titulo")
+    descricao = models.TextField(verbose_name="Descrição", blank=True, null=True)
+    data_ini = models.DateField(verbose_name="Data do evento")
+    data_fim = models.DateField(verbose_name="Data de encerramento", null=True, blank=True)
+    horario_ini = models.TimeField(verbose_name="Horário de Inicio")
+    horario_fim = models.TimeField(verbose_name="Horário de Término", null=True, blank=True)
+    ministrantes = models.TextField(blank=True, null=True)
     link = models.URLField(
         max_length=128, 
         db_index=True, 
@@ -48,13 +73,17 @@ class Eventos(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name="Evento"
+        verbose_name_plural = "Eventos"
 
 
 class Configuracao(models.Model):
     nome_empresa = models.CharField(max_length=200)
     sobre = models.TextField(help_text="Sobre a Empresa")
-    logo = models.ImageField()
-    imagem_fundadora = models.ImageField()
+    logo = models.ImageField(upload_to = 'settings/')
+    imagem_fundadora = models.ImageField(upload_to = 'settings/')
     sobre_fundadora = models.TextField()
     frase = models.CharField(max_length=300, null=True, blank=True)
     ddd = models.CharField(max_length=4)
@@ -74,5 +103,15 @@ class Configuracao(models.Model):
     pais = models.CharField(max_length=200, null=True, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
 
+    @property
+    def get_whatssapp_number(self):
+        return "+55" + str(self.ddd) + str(self.phone_cel)
+
+
     def __str__(self):
         return self.nome_empresa
+    
+
+    class Meta:
+        verbose_name="Configuração do Site"
+        verbose_name_plural = "Configurações"

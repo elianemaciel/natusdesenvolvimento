@@ -711,7 +711,7 @@ body {
     font-size: 18px;
   }
   
-  #services .title a {
+  #services .title {
     color: $color2;
   }
   
@@ -724,6 +724,19 @@ body {
     margin-left: 60px;
     line-height: 24px;
     margin-bottom: 0;
+  }
+
+  #services .services_list {
+    list-style: none;
+    font-size: 14px;
+    margin-left: 40px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  
+  #services .services_list li:before {
+    content: '✓';
+    color:$color2
   }
   
   /* Call To Action Section

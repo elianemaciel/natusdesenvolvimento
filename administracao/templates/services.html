@@ -10,11 +10,25 @@
 
     <div class="row">
       {% for service in services_list %}
-      <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-delay="100">
-        <div class="icon"><i class="ion-ios-paper-outline"></i></div>
-        <h4 class="title"><a href="">{{ service.nome }}</a></h4>
-        <p class="description">{{ service.metodologia }}</p>
+
+      <div class="card mb-3" style="max-width: 540px; margin-right: 20px;" data-aos="fade-up" data-aos-delay="100">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <div class="card-body">
+                <div class="icon"><i class="{{ service.icon }}"></i></div>
+                <h4 class="title"><a href="">{{ service.nome }}</a></h4>
+                <p class="description">{{ service.metodologia }}</p>
+                <ul class="services_list">
+                  {% for item in service.list_service.all %}
+                    <li>{{ item.descricao }} </li>
+                  {% endfor %}
+                  </ul>
+            </div>
+          </div>
+        </div>
       </div>
+
+        
       {% endfor %}
       
     </div>
