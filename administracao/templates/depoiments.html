@@ -15,9 +15,9 @@
         <h3>{{ depoimento.nome }}</h3>
         <h4>{{ depoimento.funcao|default:"" }}</h4>
         <p>
-          <img src="{% static 'img/quote-sign-left.png" class="quote-sign-left" alt="">
+          <img src="{% static 'img/quote-sign-left.png' %}" class="quote-sign-left" alt="">
           {{ depoimento.texto }}
-          <img src="{% static 'img/quote-sign-right.png" class="quote-sign-right" alt="">
+          <img src="{% static 'img/quote-sign-right.png' %}" class="quote-sign-right" alt="">
         </p>
       </div>
       {% endfor %}
