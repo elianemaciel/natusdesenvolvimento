@@ -10,7 +10,7 @@
         <div class="carousel-inner" role="listbox">
           
             {% for item in banner%}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}" style="background-image: url('{{ item.imagem.url }}')">
+                <div class="carousel-item {% if forloop.first %}active{% endif %}" style="background-image: url('static/img/banner/image-{{ item.id }}.jpg')">
                     <div class="carousel-container">
                     <div class="container">
                         <h2 class="animate__animated animate__fadeInDown">{{ item.titulo }}</h2>

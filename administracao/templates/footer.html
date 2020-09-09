@@ -6,15 +6,15 @@
         <div class="row">
           {% for conf in config %}
           <div class="col-lg-3 col-md-6 footer-info">
-            <img src="{{ conf.logo.url }}" alt="">
+            <img src="{% static 'img/logo_original.png' %}" alt="">
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Sobre</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Serviços</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#about">Sobre</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#services">Serviços</a></li>
             </ul>
           </div>
 
@@ -29,9 +29,9 @@
             </p>
 
             <div class="social-links">
-              <a href="{{ conf.facebook }}" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="{{ conf.instagram }}" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="{{ conf.linkedin }}"><i class="fa fa-linkedin"></i></a>
+              <a href="{{ conf.facebook }}" class="facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="{{ conf.instagram }}" class="instagram"><i class="fab fa-instagram"></i></a>
+              <a href="{{ conf.linkedin }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
             </div>
 
           </div>
