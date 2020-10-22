@@ -1,23 +1,14 @@
-## What
+## What?
+This is where you let the reviewer know the overall effect of the PR. Reference a ticket in your issue tracker if appropriate, but by all means, don’t just reference the ticket.
 
-Task [Configuração das abas de artigos dentro do grupo de estudo](https://duopana.myjetbrains.com/youtrack/issue/dev-521).
+## Why?
+The “why” tells us what business or engineering goal this change achieves.
 
-## Why
+## How?
+Help the reviewer out with a little more info. Explain why you decided to do it that way. This will help the reviewer understand your reasoning and, in turn, provide a better review.
 
-Change in course tabs configuration.
+## Testing?
+Therefore, it is important to let the reviewer know how you tested them, in case you cannot verify them in the tests. Alternatively, you can explain to the reviewer how to test it locally, if necessary.
 
-## How
-
-Changed the radio button to checkbox and texts to:
-- Enable discussion tab
-- Enable articles tab
-
-Alter title section.
-![Captura de tela de 2020-10-22 10-23-01](https://user-images.githubusercontent.com/72447263/96877914-9c784900-1450-11eb-8487-3eb248ead153.png)
-
-
-
-## Testing
-
-- [ ]   
-- [ ]  
+## Screenshots (optional)
+Of course, screenshots are especially useful for UI-related changes. A simple before and after screenshot, or the current state compared to your vision of local development, helps the reviewer tremendously.
