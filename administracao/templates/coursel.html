@@ -3,19 +3,19 @@
  <!-- ======= Intro Section ======= -->
  <section id="intro">
     <div class="intro-container">
-      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+      <div id="introCarousel" class="carousel slide" data-ride="carousel">
 
-        <ol class="carousel-indicators"></ol>
+        <ol class="carousel-indicators">
+        </ol>
 
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner">
           
             {% for item in banner%}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}" style="background-image: url('static/img/banner/image-{{ item.id }}.jpg')">
-                    <div class="carousel-container">
-                    <div class="container">
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  <img src="static/img/banner/image-{{ item.id }}.jpg" class="d-block w-100" alt="{{ img.titulo }}">
+                  <div class="carousel-caption d-none d-md-block">
                         <h2 class="animate__animated animate__fadeInDown">{{ item.titulo }}</h2>
                         <p class="animate__animated animate__fadeInUp">{{ item.descricao }}</p>
-                    </div>
                     </div>
                 </div>
             {% endfor %}

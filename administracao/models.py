@@ -5,7 +5,10 @@ from django.utils import timezone
 class Banner(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.CharField(max_length=400)
-    imagem = models.ImageField(upload_to = 'banner/')
+    imagem = models.ImageField(upload_to = 'banner/', blank=True, null=True)
+
+    def __str__(self):
+        return self.titulo
 
     class Meta:
         verbose_name="Banner"
@@ -16,7 +19,7 @@ class Depoimentos(models.Model):
     nome = models.CharField(max_length=200)
     funcao = models.CharField(max_length=200)
     texto = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(blank=True, null=True)
 
     created_date = models.DateTimeField(default=timezone.now)
 
@@ -78,12 +81,20 @@ class Eventos(models.Model):
         verbose_name="Evento"
         verbose_name_plural = "Eventos"
 
+class Videos(models.Model):
+    descricao = models.CharField(max_length=200)
+    link = models.URLField()
+
+    class Meta:
+        verbose_name="Lista de itens"
+        verbose_name_plural = "Listas de itens"
+
 
 class Configuracao(models.Model):
     nome_empresa = models.CharField(max_length=200)
     sobre = models.TextField(help_text="Sobre a Empresa")
-    logo = models.ImageField(upload_to = 'settings/')
-    imagem_fundadora = models.ImageField(upload_to = 'settings/')
+    logo = models.ImageField(upload_to = 'settings/', blank=True, null=True)
+    imagem_fundadora = models.ImageField(upload_to = 'settings/', blank=True, null=True)
     sobre_fundadora = models.TextField()
     frase = models.CharField(max_length=300, null=True, blank=True)
     ddd = models.CharField(max_length=4)
