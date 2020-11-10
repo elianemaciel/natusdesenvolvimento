@@ -1088,30 +1088,25 @@ body {
   
   /* Values Section
   --------------------------------*/
-  #value {
+  #clients {
     padding: 60px 0;
-    background: linear-gradient(rgba(117, 6, 221, 0.1), rgba(0, 0, 0, 0.1)), url(../img/back_value.png) fixed center center;
+    background: linear-gradient(rgba(117, 6, 221, 0.7) 0%, rgba(117, 6, 221, 0.253) 100%), url(../img/back_value.png) fixed center center;
     background-size: cover;
     padding: 60px 0;
-}
-  
-  #value img {
-    max-width: 100%;
-    opacity: 0.5;
-    transition: 0.3s;
-    padding: 15px 0;
+    color: $color-verde2;
+
+    h3 {
+      color: #FFF;
+    }
   }
   
-  #value img:hover {
-    opacity: 1;
-  }
   
-  #value .owl-nav, #value .owl-dots {
+  #clients .owl-nav, #value .owl-dots {
     margin-top: 5px;
     text-align: center;
   }
   
-  #value .owl-dot {
+  #clients .owl-dot {
     display: inline-block;
     margin: 0 5px;
     width: 12px;
@@ -1119,13 +1114,18 @@ body {
     border-radius: 50%;
   }
   
-  #value .owl-dot.active {
+  #clients .owl-dot.active {
     background-color: $color1;
   }
-  #value .value-carousel .item{
+  #clients .clients-carousel .item{
     font-size: 20px;
     text-align: center;
     margin: 10px;
+    font-weight: 800;
+
+    i {
+      font-size: 40px;
+    }
 
   }
 
