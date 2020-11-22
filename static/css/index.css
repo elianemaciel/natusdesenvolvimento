@@ -448,7 +448,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 399, ../../stylesheets/sass/index.scss */
 #intro .carousel-item::before {
   content: '';
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* line 404, ../../stylesheets/sass/index.scss */
