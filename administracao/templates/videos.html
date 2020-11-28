@@ -1,0 +1,24 @@
+{% load static %}
+<section id="videos" class="section-bg">
+    <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+        <h3 class="section-title">Youtube</h3>
+    </header>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        
+      {% for item in videos_list %}
+      <div class="col-lg-6 col-md-6 portfolio-item">
+          <strong>{{ item.descricao }}</strong>
+          <hr />
+            {{item.iframe | safe }}  
+      </div>
+      {% empty %}
+      Acompanhe os vídeos pelas redes sociais.
+      {% endfor %}
+
+    </div>
+
+    </div>
+  </section><!-- End Portfolio Section -->

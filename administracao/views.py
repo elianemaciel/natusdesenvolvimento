@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from datetime import datetime
 
-from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner
+from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos
 
 
 class HomeView(TemplateView):
@@ -24,6 +24,7 @@ class HomeView(TemplateView):
         context['events_list'] = Eventos.objects.filter(data_ini__gte=today)[0:10]
         context['config'] = Configuracao.objects.all()
         context['banner'] = Banner.objects.all()
+        context['videos_list'] = Videos.objects.all()
         return context
 
 def send_email(request):

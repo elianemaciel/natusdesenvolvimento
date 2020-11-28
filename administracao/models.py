@@ -19,7 +19,6 @@ class Depoimentos(models.Model):
     nome = models.CharField(max_length=200)
     funcao = models.CharField(max_length=200)
     texto = models.TextField()
-    image = models.ImageField(blank=True, null=True)
 
     created_date = models.DateTimeField(default=timezone.now)
 
@@ -83,11 +82,11 @@ class Eventos(models.Model):
 
 class Videos(models.Model):
     descricao = models.CharField(max_length=200)
-    link = models.URLField()
+    iframe = models.TextField()
 
     class Meta:
-        verbose_name="Lista de itens"
-        verbose_name_plural = "Listas de itens"
+        verbose_name="Video"
+        verbose_name_plural = "Videos"
 
 
 class Configuracao(models.Model):
