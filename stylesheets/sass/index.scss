@@ -454,11 +454,6 @@ body {
     color: orange;
     font-weight: 700;
     font-size: 18px;
-
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: typing 4.5s steps(40, end), blink-caret .75s step-end infinite;
   }
   
   @media (min-width: 1024px) {
