@@ -108,12 +108,12 @@ body {
   #header {
     transition: all 0.5s;
     z-index: 997;
-    padding: 26px 0;
+    padding: 16px 0;
     background: $color2;
   }
   
   #header.header-transparent {
-    background: transparent;
+    background: rgba(0,0,0, 0.5);
   }
   
   #header.header-scrolled {
@@ -170,7 +170,7 @@ body {
   .nav-menu a {
     display: block;
     position: relative;
-    color: #fff;
+    color: #FFF;
     transition: 0.3s;
     font-size: 12px;
     font-family: "Montserrat", sans-serif;
@@ -398,7 +398,8 @@ body {
   
   #intro .carousel-item::before {
     content: '';
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: $color2;
+    opacity: 0.2;
   }
   
   #intro .carousel-container {
@@ -416,15 +417,15 @@ body {
     text-align: center;
   }
   
-  #intro h2 {
-    color: #fff;
+  #intro h1 {
+    color: #FFF;
     margin-bottom: 30px;
     font-size: 48px;
     font-weight: 700;
   }
   
   @media (max-width: 768px) {
-    #intro h2 {
+    #intro h1 {
       font-size: 28px;
     }
   }
@@ -432,7 +433,9 @@ body {
   #intro p {
     width: 80%;
     margin: 0 auto 30px auto;
-    color: #fff;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 25px;
   }
   
   @media (min-width: 1024px) {
@@ -1090,7 +1093,7 @@ body {
   --------------------------------*/
   #clients {
     padding: 60px 0;
-    background: linear-gradient(rgba(117, 6, 221, 0.7) 0%, rgba(117, 6, 221, 0.253) 100%), url(../img/back_value.png) fixed center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(117, 6, 221, 0.253) 100%), url(../img/back_value.png) fixed center center;
     background-size: cover;
     padding: 60px 0;
     color: $color-verde2;
@@ -1101,7 +1104,7 @@ body {
   }
   
   
-  #clients .owl-nav, #value .owl-dots {
+  #clients .owl-nav, #clients .owl-dots {
     margin-top: 5px;
     text-align: center;
   }
@@ -1120,11 +1123,12 @@ body {
   #clients .clients-carousel .item{
     font-size: 20px;
     text-align: center;
-    margin: 10px;
+    margin: 20px;
     font-weight: 800;
 
     i {
       font-size: 40px;
+      margin-bottom: 20px;
     }
 
   }
@@ -1133,6 +1137,8 @@ body {
   --------------------------------*/
   #testimonials {
     padding: 60px 0;
+    background: rgb(247,247,247);
+    background: linear-gradient(0deg, rgba(247,247,247,1) 0%, rgba(157,127,185,1) 100%);
     h1, h3 {
       color: $color1;
     }
@@ -1162,7 +1168,7 @@ body {
   
   #testimonials .testimonial-item h4 {
     font-size: 14px;
-    color: #999;
+    color: #111;
     margin: 0 0 15px 0;
   }
   
@@ -1184,6 +1190,7 @@ body {
   #testimonials .testimonial-item p {
     font-style: italic;
     margin: 0 auto 15px auto;
+    color: #333;
   }
   
   @media (min-width: 992px) {
@@ -1203,11 +1210,11 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: $color2;
   }
   
   #testimonials .owl-dot.active {
-    background-color: $color2;
+    background-color: $color1;
   }
   
   /* Team Section
@@ -1610,5 +1617,14 @@ h1, h3 {
 .value-carousel{
   .item {
 
+  }
+}
+
+#img-sobre{
+
+  &:hover{
+    -moz-transform: scale(1.1);
+	  -webkit-transform: scale(1.1);
+	  transform: scale(1.1);
   }
 }
