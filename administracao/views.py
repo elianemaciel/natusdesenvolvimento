@@ -21,10 +21,10 @@ class HomeView(TemplateView):
         # import ipdb; ipdb.set_trace()
         context['depoiments_list'] = Depoimentos.objects.all()
         context['services_list'] = Servicos.objects.all()
-        context['events_list'] = Eventos.objects.filter(data_ini__gte=today)[0:10]
+        context['events_list'] = Eventos.objects.filter(data_ini__gte=today).order_by('-id')[0:10]
         context['config'] = Configuracao.objects.all()
         context['banner'] = Banner.objects.all()
-        context['videos_list'] = Videos.objects.all()
+        context['videos_list'] = Videos.objects.all().order_by('-id')[0:6]
         return context
 
 def send_email(request):

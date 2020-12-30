@@ -868,7 +868,19 @@ body {
     text-align: center;
     padding-top: 30px;
   }
+
+  section#videos {
+    padding: 60px 0;
+  }
+
+  section#videos iframe, section#videos video{
+      max-width: 100%;
+      max-height: 200px;
+  }
   
+  section#videos .portfolio-item{
+    padding-top: 20px;
+  }
   /* Portfolio Section
   --------------------------------*/
   #portfolio {

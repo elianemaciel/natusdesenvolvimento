@@ -9,10 +9,18 @@
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         
       {% for item in videos_list %}
-      <div class="col-lg-6 col-md-6 portfolio-item">
+      <div class="col-lg-4 col-md-4 portfolio-item">
           <strong>{{ item.descricao }}</strong>
           <hr />
-            {{item.iframe | safe }}  
+          {% if item.iframe %}
+              {{item.iframe | safe }}
+          {% endif %}
+          {% if item.file %}
+            <video width='600' controls>
+              <source src='{{ item.file.url }}' type='video/mp4'>
+              File not found.
+            </video>
+          {% endif %}
       </div>
       {% empty %}
       Acompanhe os vídeos pelas redes sociais.
