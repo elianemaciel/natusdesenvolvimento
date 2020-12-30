@@ -48,8 +48,9 @@ def view_send_email(request):
         )
     except Exception as e:
         print(e)
-    
-    to_email = [Configuracao.objects.all()[0].email]
+    emails = []
+    to_email = Configuracao.objects.all()[0].email
+    emails.append(to_email)
 
     text = """
     
@@ -69,7 +70,7 @@ def view_send_email(request):
             subject,
             text,
             EMAIL_HOST_USER,
-            ["eifmaciel@ucs.br"],
+            emails,
             False
         )
     except BadHeaderError:
