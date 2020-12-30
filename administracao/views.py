@@ -1,11 +1,13 @@
+# -*- coding: UTF-8 -*-
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.mail import BadHeaderError, send_mail
+from sitenatus.settings import EMAIL_HOST_USER
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from datetime import datetime
 
-from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos
+from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos, Contatos, Messages
 
 
 class HomeView(TemplateView):
@@ -27,19 +29,50 @@ class HomeView(TemplateView):
         context['videos_list'] = Videos.objects.all().order_by('-id')[0:6]
         return context
 
-def send_email(request):
-    subject = 'Teste'
-    message = request.POST.get('message', '')
+
+def view_send_email(request):
+    subject = 'Contato pelo site'
+    txt = request.POST.get('message', '')
     from_email = request.POST.get('from_email', '')
-    # to_email = [Configuracao.objects.all()[0].email]
-    to_email = ["eliane.faveron@gmail.com"]
-    if subject and message and from_email:
-        try:
-            send_email(subject, message, from_email, ["eifmaciel@ucs.br"])
-        except BadHeaderError:
-            return HttpResponse('Invalid header found.')
-        return HttpResponseRedirect('/contact/thanks/')
-    else:
-        # In reality we'd use a form class
-        # to get proper validation errors.
-        return HttpResponse('Make sure all fields are entered and valid.')
+    name = request.POST.get('name', '')
+
+    try:
+        contato = Contatos.objects.get_or_create(
+            email=from_email,
+            name=name
+        )
+
+        message = Messages.objects.create(
+            contact=contato[0],
+            text=txt
+        )
+    except Exception as e:
+        print(e)
+    
+    to_email = [Configuracao.objects.all()[0].email]
+
+    text = """
+    
+        Mensagem enviada por {nome} - {email}:
+    
+
+        {message}
+
+        Obs: Mensagem meramente informativa, não responder.
+    """.format(
+        nome=name,
+        email=from_email,
+        message=txt
+    )
+    try:
+        send_mail(
+            subject,
+            text,
+            EMAIL_HOST_USER,
+            ["eifmaciel@ucs.br"],
+            False
+        )
+    except BadHeaderError:
+        return HttpResponse('Invalid header found.')
+    return HttpResponseRedirect('/')
+    

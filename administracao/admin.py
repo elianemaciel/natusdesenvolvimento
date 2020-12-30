@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from django.contrib import admin
 from .models import Videos, Configuracao, Servicos, ListServicos, Eventos, Depoimentos, Banner, Contatos, Messages
 
