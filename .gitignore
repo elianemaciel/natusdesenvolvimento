@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 natus/*
 .sass-cache/*
+media/*
 
 # C extensions
 *.so
