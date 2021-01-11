@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from administracao.views import HomeView, view_send_email
+from administracao.views import HomeView, view_send_email, ListVideosView
 from django.contrib.staticfiles.urls import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name="home"),
     path('send_mail/', view_send_email, name="email"),
+    path('videos/', ListVideosView.as_view(), name="videos"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

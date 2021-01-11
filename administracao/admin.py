@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 from django.contrib import admin
-from .models import Videos, Configuracao, Servicos, ListServicos, Eventos, Depoimentos, Banner, Contatos, Messages
+from .models import Videos, Configuracao, Servicos, ListServicos, Eventos, Depoimentos, Banner, Contatos, Messages, Certificados
 
 class ConfigAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -30,5 +30,6 @@ admin.site.register(Banner)
 admin.site.register(Videos)
 admin.site.register(Messages)
 admin.site.register(Contatos)
+admin.site.register(Certificados)
 
 admin.site.site_header = 'Natus Desenvolvimento Humano e Organizacional - Administração'

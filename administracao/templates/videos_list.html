@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<section id="videos" class="section-bg" style="padding-top: 80px;">
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+            <h3 class="section-title">Videos</h3>
+        </header>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            {% for item in videos_list %}
+            <div class="col-lg-6 col-md-6 portfolio-item">
+                <strong>{{ item.descricao }}</strong>
+                <hr />
+                {% if item.iframe %}
+                    {{item.iframe | safe }}
+                {% endif %}
+                {% if item.file %}
+                    <video width='600' controls>
+                    <source src='{{ item.file.url }}' type='video/mp4'>
+                    File not found.
+                    </video>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Section -->
+{% endblock %}

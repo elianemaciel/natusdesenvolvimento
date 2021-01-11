@@ -12,7 +12,7 @@
 
   <!-- Favicons -->
   <link href="{% static 'img/favicon.png' %}" rel="icon">
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'img/favicon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -20,7 +20,7 @@
   <!-- Vendor CSS Files -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/font-awesome/css/fontawesome.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/font-awesome/css/all.css' %}" rel="stylesheet">
+  <link href="{% static 'css/font-awesome/css/all.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
@@ -43,12 +43,12 @@
           <nav class="nav-menu d-none d-lg-block">
             <ul>
               <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
-              <li><a href="#about">Quem somos</a></li>
-              <li><a href="#services">Serviços</a></li>
-              <li><a href="#portfolio">Agenda</a></li>
-              <li><a href="#videos">Videos</a></li>
-              <li><a href="#testimonials">Depoimentos</a></li>
-              <li><a href="#contact">Contato</a></li>
+              <li><a href="/#about">Quem somos</a></li>
+              <li><a href="/#services">Serviços</a></li>
+              <li><a href="/#portfolio">Agenda</a></li>
+              <li><a href="/#videos">Videos</a></li>
+              <li><a href="/#testimonials">Depoimentos</a></li>
+              <li><a href="/#contact">Contato</a></li>
 
             </ul>
           </nav><!-- .nav-menu -->
@@ -57,34 +57,36 @@
 
     </div>
   </header><!-- End Header -->
-
+  {% block content %}
   {% include "coursel.html" %}
   <main id="main">
-
-    <!-- ======= About Us Section ======= -->
-    {% include "about.html" %}
-
-    {% include "vision.html" %}
-
-    <!-- ======= Services Section ======= -->
-    {% include "services.html" %}
     
-    <!-- ======= Call To Action Section ======= -->
-    <section id="call-to-action">
-      <div class="container text-center" style="color: #FFF; font-style: italic;" data-aos="zoom-in">
-        <h2>{{ config.0.frase }}
-        </h2>
-      </div>
-    </section><!-- End Call To Action Section -->
+      <!-- ======= About Us Section ======= -->
+      {% include "about.html" %}
 
-    <!-- ======= Portfolio Section ======= -->
-    {% include "events.html" %}
-    {% include "videos.html" %}
-    <!-- ======= Testimonials Section ======= -->
-    {% include "depoiments.html" %}
-    <!-- ======= Contact Section ======= -->
-    {% include "contato.html" %}
+      {% include "vision.html" %}
+
+      <!-- ======= Services Section ======= -->
+      {% include "services.html" %}
+      
+      <!-- ======= Call To Action Section ======= -->
+      <section id="call-to-action">
+        <div class="container text-center" style="color: #FFF; font-style: italic;" data-aos="zoom-in">
+          <h2>{{ config.0.frase }}
+          </h2>
+        </div>
+      </section><!-- End Call To Action Section -->
+
+      <!-- ======= Portfolio Section ======= -->
+      {% include "events.html" %}
+      {% include "videos.html" %}
+      <!-- ======= Testimonials Section ======= -->
+      {% include "depoiments.html" %}
+      <!-- ======= Contact Section ======= -->
+      {% include "contato.html" %}
+    
   </main><!-- End #main -->
+  {% endblock content %}
 
   {% include "footer.html" %}
   <!-- Uncomment below i you want to use a preloader -->

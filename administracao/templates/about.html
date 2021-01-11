@@ -18,6 +18,25 @@
           <img class="img-fluid" alt="" src="{% static 'img/LAZA0009-removebg.png' %}">
         </div>
       </div>
-    </header>  
+    </header>
 </div>
+<hr />
+<div class="row about-cols">
+
+  {% for item in certificates %}
+  <div class="col text-center" data-aos="fade-up" data-aos-delay="100">
+    <div class="about-col">
+      <div class="img">
+        <img src="{{ item.imagem.url }}" alt="" class="img-fluid">
+      </div>
+      <strong class="title">{{ item.nome }}</strong>
+      <p>
+        {{ item.text }}
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
 </section><!-- End About Us Section -->

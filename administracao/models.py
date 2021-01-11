@@ -301,3 +301,28 @@ class Messages(models.Model):
     class Meta:
         verbose_name="Mensagem"
         verbose_name_plural = "Mensagens"
+
+
+class Certificados(models.Model):
+    nome = models.CharField(
+        verbose_name="Nome",
+        max_length=200
+    )
+    imagem = models.ImageField(
+        upload_to = 'certificates/',
+        blank=True,
+        null=True,
+        verbose_name="Imagem/logo da certificação"
+    )
+    text = models.TextField(
+        blank=True,
+        null=True,
+    )
+    created_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name="Certificado"
+        verbose_name_plural = "Certificados"

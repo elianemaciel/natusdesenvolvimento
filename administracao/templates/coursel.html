@@ -12,7 +12,9 @@
           
             {% for item in banner%}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                  <img src="static/img/banner/image-{{ item.id }}.jpg" class="d-block w-100" alt="{{ img.titulo }}">
+                  {% if item.imagem %}
+                  <img src="{{ item.imagem.url }}" class="d-block w-100" alt="{{ img.titulo }}">
+                  {% endif %}
                   <div class="carousel-caption d-none d-md-block">
                         <h1>{{ item.titulo }}</h1>
                         <p class="animate__animated animate__fadeInUp">{{ item.descricao }}</p>

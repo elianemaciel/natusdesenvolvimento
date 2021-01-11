@@ -2,12 +2,14 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.mail import BadHeaderError, send_mail
-from sitenatus.settings import EMAIL_HOST_USER
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
+from django.views.generic import ListView
+
 from datetime import datetime
 
-from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos, Contatos, Messages
+from sitenatus.settings import EMAIL_HOST_USER
+from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos, Contatos, Messages, Certificados
 
 
 class HomeView(TemplateView):
@@ -20,14 +22,19 @@ class HomeView(TemplateView):
         # Add in a QuerySet of all the books
         
         today = datetime.today().date()
-        # import ipdb; ipdb.set_trace()
         context['depoiments_list'] = Depoimentos.objects.all()
         context['services_list'] = Servicos.objects.all()
         context['events_list'] = Eventos.objects.filter(data_ini__gte=today).order_by('-id')[0:10]
         context['config'] = Configuracao.objects.all()
         context['banner'] = Banner.objects.all()
         context['videos_list'] = Videos.objects.all().order_by('-id')[0:6]
+        context['certificates'] = Certificados.objects.all()
         return context
+
+
+class ListVideosView(ListView):
+    model = Videos
+    template_name = "videos_list.html"
 
 
 def view_send_email(request):
