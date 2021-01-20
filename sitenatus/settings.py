@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'administracao'
+    'administracao',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,10 @@ EMAIL_HOST_PASSWORD = 'Natus@21'
 
 EMAIL_USE_TLS: True
 EMAIL_USE_SSL: False
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hvjlnivrz',
+    'API_KEY': '136635133744894',
+    'API_SECRET': 'uRKR7Yzboa6FgUa4HSF4CLfCZXk',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
