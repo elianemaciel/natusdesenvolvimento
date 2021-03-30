@@ -1,42 +1,55 @@
 {% load static %}
 <!-- Start About area -->
 <section id="about">
-  <div class="container" >
+  <div class="container">
 
     <header class="section-header">
       <div class="row">
-        <div class="col-md-8" data-aos="fade-right">
+        <div class="col-md-8 col-sm-12" data-aos="fade-right">
           <h3>Quem somos</h3>
           <p>{{ config.0.sobre }}</p>
-
           <hr />
-
           <h3 class="text-center">Lidiane Drum</h3>
           <p class="text-center">{{ config.0.sobre_fundadora }}</p>
-        </div>
-        <div class="col-md-4" data-aos="fade-left">
+        </div> 
+        <div class="col-md-4 col-sm-2" data-aos="fade-left">
           <img class="img-fluid" alt="" src="{% static 'img/LAZA0009-removebg.png' %}">
         </div>
       </div>
+      
     </header>
 </div>
-<hr />
-<div class="row about-cols">
 
-  {% for item in certificates %}
-  <div class="col text-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="about-col">
-      <div class="img">
-        <img src="{{ item.imagem.url }}" alt="" class="img-fluid" style="max-height: 100px;">
-      </div>
-      <strong class="title">{{ item.nome }}</strong>
-      <p>
-        {{ item.text }}
-      </p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12" id="video-institucional">
+      {{ config.0.video_institucional | safe }}
     </div>
   </div>
-  {% endfor %}
-
+  
 </div>
+
+<div class="container">
+
+  <div class="row about-cols">
+
+    {% for item in certificates %}
+    <div class="col-md-4 col-sm-12 text-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="about-col">
+        <div class="img">
+          <img src="{{ item.imagem.url }}" alt="" class="img-fluid" style="max-height: 100px;">
+        </div>
+        <strong class="title">{{ item.nome }}</strong>
+        <p>
+          {{ item.text }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+
 
 </section><!-- End About Us Section -->

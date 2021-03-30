@@ -381,7 +381,7 @@ body {
       height: 150vh;
     }
   }
-  
+
   #intro .carousel, #intro .carousel-inner, #intro .carousel-item, #intro .carousel-item::before {
     position: absolute;
     top: 0;
@@ -1657,4 +1657,26 @@ h1, h3 {
 	  -webkit-transform: scale(1.1);
 	  transform: scale(1.1);
   }
+}
+
+#video-institucional {
+  padding: 0px;
+  iframe {
+    width: 100%;
+  }
+}
+
+.about-cols {
+  margin-top: 20px;
+}
+
+.about-col {
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+#services #card-services {
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+  border: none;
 }

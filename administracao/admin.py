@@ -8,7 +8,7 @@ class ConfigAdmin(admin.ModelAdmin):
             'fields': ('nome_empresa', ('ddd', 'phone_cel', 'phone_com'), 'email',('rua', 'numero', 'cidade', 'pais')),
         }),
         ('Sobre', {
-            'fields': ('sobre', 'logo', 'imagem_fundadora', 'sobre_fundadora', 'frase'),
+            'fields': ('sobre', 'logo', 'imagem_fundadora', 'sobre_fundadora', 'frase', 'video_institucional'),
         }),
         ('Social', {
             'fields': ('facebook', 'twitter', 'instagram', 'message_whatsapp'),

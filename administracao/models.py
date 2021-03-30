@@ -259,6 +259,12 @@ class Configuracao(models.Model):
         blank=True,
         verbose_name="País"
     )
+    video_institucional = models.TextField(
+        verbose_name="Vide Institucional",
+        help_text="Copie e cole aqui o embed do arquivo",
+        blank=True,
+        null=True
+    )
     created_date = models.DateTimeField(default=timezone.now)
 
     @property
