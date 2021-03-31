@@ -164,4 +164,4 @@ SECURE_SSL_REDIRECT = True
 
 import socket
 if socket.gethostname()=="eliane-acer":
-    from local_settings import *
+    from sitenatus.local_settings import *
