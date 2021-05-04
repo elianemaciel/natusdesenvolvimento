@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Natus Desenvolvimento Homano e Organizacional</title>
+  <title>Natus Desenvolvimento Humano e Organizacional</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,7 +15,8 @@
   <link href="{% static 'img/favicon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -38,7 +39,8 @@
       <div class="row justify-content-center">
         <div class="col-xl-11 d-flex align-items-center">
           <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="{% url 'home' %}" class="logo mr-auto"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>
+          <a href="{% url 'home' %}" class="logo mr-auto"><img src="{% static 'img/logo.png' %}" alt=""
+              class="img-fluid"></a>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
@@ -60,30 +62,30 @@
   {% block content %}
   {% include "coursel.html" %}
   <main id="main">
-    
-      <!-- ======= About Us Section ======= -->
-      {% include "about.html" %}
 
-      {% include "vision.html" %}
+    <!-- ======= About Us Section ======= -->
+    {% include "about.html" %}
 
-      <!-- ======= Services Section ======= -->
-      {% include "services.html" %}
-      
-      <!-- ======= Call To Action Section ======= -->
-      <section id="call-to-action">
-        <div class="container text-center" style="color: #FFF; font-style: italic;" data-aos="zoom-in">
-          <h2>{{ config.0.frase }}
-          </h2>
-        </div>
-      </section><!-- End Call To Action Section -->
+    {% include "vision.html" %}
 
-      <!-- ======= Portfolio Section ======= -->
-      {% include "events.html" %}
-      {% include "videos.html" %}
-      <!-- ======= Testimonials Section ======= -->
-      {% include "depoiments.html" %}
-      <!-- ======= Contact Section ======= -->
-      {% include "contato.html" %}
+    <!-- ======= Services Section ======= -->
+    {% include "services.html" %}
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container text-center" style="color: #FFF; font-style: italic;" data-aos="zoom-in">
+        <h2>{{ config.0.frase }}
+        </h2>
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    {% include "events.html" %}
+    {% include "videos.html" %}
+    <!-- ======= Testimonials Section ======= -->
+    {% include "depoiments.html" %}
+    <!-- ======= Contact Section ======= -->
+    {% include "contato.html" %}
 
   </main><!-- End #main -->
   {% endblock content %}
@@ -108,18 +110,18 @@
   <script src="{% static 'js/main.js' %}"></script>
 
   <script type="text/javascript">
-  (function () {
+    (function () {
       var options = {
-          whatsapp: "{{ config.0.get_whatssapp_number }}", // WhatsApp number
-          call_to_action: "Fale Conosco Agora!", // Call to action
-          position: "right", // Position may be 'right' or 'left'
+        whatsapp: "{{ config.0.get_whatssapp_number }}", // WhatsApp number
+        call_to_action: "Fale Conosco Agora!", // Call to action
+        position: "right", // Position may be 'right' or 'left'
       };
       var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
       var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
       s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
       var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-  })();
-</script>
+    })();
+  </script>
 
 
 </body>
