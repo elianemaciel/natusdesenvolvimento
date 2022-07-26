@@ -5,37 +5,31 @@
 
     <header class="section-header">
       <div class="row">
-        <div class="col-md-8 col-sm-12" data-aos="fade-right">
+        <div class="col-md-4 pt-1 col-sm-12">
           <h3>Quem somos</h3>
-          <p>{{ config.0.sobre }}</p>
-          <hr />
+          <p>{{ config.sobre }}</p>
+        </div>
+        <div class="col-md-4 col-sm-2">
+          <img class="img-fluid" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" alt="" src="{{config.imagem_fundadora.url }}">
+        </div>
+        <div class="col-md-4 pt-1  col-sm-2">
           <h3 class="text-center">Lidiane Drum</h3>
-          <p class="text-center">{{ config.0.sobre_fundadora }}</p>
-        </div> 
-        <div class="col-md-4 col-sm-2" data-aos="fade-left">
-          <img class="img-fluid" alt="" src="{% static 'img/LAZA0009-removebg.png' %}">
+          <p class="text-center">{{ config.sobre_fundadora }}</p>
         </div>
       </div>
-      
     </header>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12" id="video-institucional">
-      {{ config.0.video_institucional | safe }}
-    </div>
-  </div>
-  
-</div>
 
-<div class="container">
+<div class="container mt-5">
 
-  <div class="row about-cols">
+  <header class="section-header">
 
+    <h3>Certificações</h3>
+    <div class="d-flex justify-content-center">
     {% for item in certificates %}
-    <div class="col-md-4 col-sm-12 text-center" data-aos="fade-up" data-aos-delay="100">
-      <div class="about-col">
+    
+      <div class="mr-3 text-center">
         <div class="img">
           <img src="{{ item.imagem.url }}" alt="" class="img-fluid" style="max-height: 100px;">
         </div>
@@ -44,12 +38,20 @@
           {{ item.text }}
         </p>
       </div>
-    </div>
     {% endfor %}
-
   </div>
+
+  </header>
 </div>
 
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" id="video-institucional">
+      {{ config.video_institucional | safe }}
+    </div>
+  </div>
+  
+</div>
 
 </section><!-- End About Us Section -->

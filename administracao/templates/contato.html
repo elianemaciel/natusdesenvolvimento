@@ -5,15 +5,14 @@
       <div class="section-header">
         <h3>Contato</h3>
       </div>
-      {% for contato in config %}
       <div class="row contact-info">
 
-        <!-- {% if contato.rua %}
+        <!-- {% if config.rua %}
         <div class="col-md-4">
           <div class="contact-address">
             <i class="ion-ios-location-outline"></i>
             <h3>Endereço</h3>
-            <address>{{ contato.rua }} {{ contato.numero }}, {{ contato.cidade }}, {{ contato.pais }}</address>
+            <address>{{ config.rua }} {{ config.numero }}, {{ config.cidade }}, {{ config.pais }}</address>
           </div>
         </div>
         {% endif %} -->
@@ -22,7 +21,7 @@
           <div class="contact-phone">
             <i class="ion-ios-telephone-outline"></i>
             <h3>Telefone</h3>
-            <p><a href="tel:{{ contato.phone_com }}">({{ contato.ddd }}) {{ contato.phone_com }}</a></p>
+            <p><a href="tel:{{ config.phone_com }}">({{ config.ddd }}) {{ config.phone_com }}</a></p>
           </div>
         </div>
 
@@ -30,23 +29,22 @@
           <div class="contact-email">
             <i class="ion-ios-email-outline"></i>
             <h3>Email</h3>
-            <p><a href="mailto:{{ contato.email }}">{{ contato.email }}</a></p>
+            <p><a href="mailto:{{ config.email }}">{{ config.email }}</a></p>
           </div>
         </div>
         <div class="col-md-4">
             <div class="contact-phone">
               <i class="ion-social-whatsapp"></i>
               <h3>Whatsapp</h3>
-              <p><a target="_blank" href="https://api.whatsapp.com/send?phone={{ contato.phone_cel }}&text=
-                {{ contato.message_whatsapp }}">({{ contato.ddd }}) {{ contato.phone_cel }}</a></p>
+              <p><a target="_blank" href="https://api.whatsapp.com/send?phone={{ config.phone_cel }}&text=
+                {{ config.message_whatsapp }}">({{ config.ddd }}) {{ config.phone_cel }}</a></p>
             </div>
           </div>
 
       </div>
-      {% endfor %}
       <div class="row">
         <div class="col-md-3" >
-          <img  style="max-height: 300px;" class="img-fluid" src="{% static 'img/lidi_contato.png' %}">
+          <img  style="max-height: 300px;" alt="" class="img-fluid" src="{% static 'img/lidi_config.png' %}">
         </div>
           <div class="col-md-9">
             <div class="form">

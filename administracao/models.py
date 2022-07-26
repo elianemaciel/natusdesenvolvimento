@@ -232,6 +232,16 @@ class Configuracao(models.Model):
         null=True,
         blank=True
     )
+    linkedin = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True
+    )
+    youtube = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True
+    )
     message_whatsapp = models.CharField(
         max_length=200,
         help_text="Mensagem para iniciar conversa pelo whatsapp"
@@ -332,3 +342,19 @@ class Certificados(models.Model):
     class Meta:
         verbose_name="Certificado"
         verbose_name_plural = "Certificados"
+        
+class Menus(models.Model):
+    nome = models.CharField(
+        verbose_name="Nome",
+        max_length=200
+    )
+    
+    ordem = models.IntegerField(
+        verbose_name="Ordem"
+    )
+    
+    href = models.CharField(
+        verbose_name="Link",
+        max_length=200
+    )
+    

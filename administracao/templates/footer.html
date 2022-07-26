@@ -4,7 +4,7 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-          {% for conf in config %}
+          
           <div class="col-lg-3 col-md-6 footer-info">
             <img src="{% static 'img/logo_original.png' %}" alt="">
           </div>
@@ -21,21 +21,21 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contato</h4>
             <p>
-              <strong>Telefone:</strong>({{ conf.ddd }}) {{ conf.phone_com }}<br>
-              <strong>Email:</strong>{{ conf.email }}<br>
-              {{ conf.rua|default_if_none:"" }}<br>
-              {{ conf.cidade|default_if_none:"" }}<br>
-              {{ conf.pais|default_if_none:"" }}<br>
+              <strong>Telefone: </strong>({{ config.ddd }}) {{ config.phone_com | default_if_none:'' }}<br>
+              <strong>Email: </strong>{{ config.email | default_if_none:'' }}<br>
+              {{ config.rua|default_if_none:"" }}<br>
+              {{ config.cidade|default_if_none:"" }}<br>
+              {{ config.pais|default_if_none:"" }}<br>
             </p>
 
             <div class="social-links">
-              <a href="{{ conf.facebook }}" class="facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="{{ conf.instagram }}" class="instagram"><i class="fab fa-instagram"></i></a>
-              <a href="{{ conf.linkedin }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+              {% if config.facebook %}<a href="{{ conf.facebook }}" class="facebook"><i class="fab fa-facebook-f"></i></a>{% endif %}
+              {% if config.instagram %}<a href="{{ conf.instagram }}" class="instagram"><i class="fab fa-instagram"></i></a>{% endif %}
+              {% if config.linkedin %}<a href="{{ conf.linkedin }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>{% endif %}
+              {% if config.youtube %}<a href="{{ conf.youtube }}" class="linkedin"><i class="fab fa-linkedin-in"></i></a>{% endif %}
             </div>
 
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>

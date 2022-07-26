@@ -5,6 +5,10 @@ __pycache__/
 natus/*
 stylesheets/.sass-cache/*
 media/*
+.sass-cache/
+.vscode/*
+myvenv/*
+node_modules/*
 
 # C extensions
 *.so

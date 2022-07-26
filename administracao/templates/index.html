@@ -7,8 +7,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Natus Desenvolvimento Humano e Organizacional</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Natus oferece treinamento e consultoria para lideranças e no individual." name="description">
+  <meta content="liderança, coaching, pda" name="keywords">
 
   <!-- Favicons -->
   <link href="{% static 'img/favicon.png' %}" rel="icon">
@@ -19,7 +19,7 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"> -->
   <link href="{% static 'css/font-awesome/css/fontawesome.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/font-awesome/css/all.min.css' %}" rel="stylesheet">
   <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
@@ -44,14 +44,12 @@
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
-              <li><a href="/#about">Quem somos</a></li>
-              <li><a href="/#services">Serviços</a></li>
-              <li><a href="/#portfolio">Agenda</a></li>
-              <li><a href="/#videos">Videos</a></li>
-              <li><a href="/#testimonials">Depoimentos</a></li>
-              <li><a href="/#contact">Contato</a></li>
-
+              {% for menu in menus %}
+              <li >
+                
+                <a href="{{menu.href }}">{{menu.nome}}</a></li>
+              {% endfor %}
+              
             </ul>
           </nav><!-- .nav-menu -->
         </div>

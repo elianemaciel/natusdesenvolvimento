@@ -1,4 +1,5 @@
 {% load static %}
+{% if videos_list %}
 <section id="videos" class="section-bg">
     <div class="container" data-aos="fade-up">
 
@@ -6,10 +7,10 @@
         <h3 class="section-title">Youtube</h3>
     </header>
 
-    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+    <div class="d-flex justify-content-center">
         
       {% for item in videos_list %}
-      <div class="col-lg-4 col-md-4 portfolio-item">
+      <div class="portfolio-item mr-4">
           <strong>{{ item.descricao }}</strong>
           <hr />
           {% if item.iframe %}
@@ -22,8 +23,6 @@
             </video>
           {% endif %}
       </div>
-      {% empty %}
-      Acompanhe os vídeos pelas redes sociais.
       {% endfor %}
       
     </div>
@@ -34,3 +33,4 @@
 
     </div>
   </section><!-- End Portfolio Section -->
+{% endif %}

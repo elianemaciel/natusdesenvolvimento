@@ -9,7 +9,7 @@ from django.views.generic import ListView
 from datetime import datetime
 
 from sitenatus.settings import EMAIL_HOST_USER
-from .models import Depoimentos, Servicos, Eventos, Configuracao, Banner, Videos, Contatos, Messages, Certificados
+from .models import Depoimentos, Menus, Servicos, Eventos, Configuracao, Banner, Videos, Contatos, Messages, Certificados
 
 
 class HomeView(TemplateView):
@@ -25,9 +25,10 @@ class HomeView(TemplateView):
         context['depoiments_list'] = Depoimentos.objects.all()
         context['services_list'] = Servicos.objects.all()
         context['events_list'] = Eventos.objects.filter(data_ini__gte=today).order_by('-id')[0:10]
-        context['config'] = Configuracao.objects.all()
+        context['config'] = Configuracao.objects.all()[0]
         context['banner'] = Banner.objects.all()
         context['videos_list'] = Videos.objects.all().order_by('-id')[0:6]
+        context['menus'] = Menus.objects.all().order_by('ordem')
         context['certificates'] = Certificados.objects.all()
         return context
 

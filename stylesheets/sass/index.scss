@@ -1,4 +1,5 @@
 @import "variables";
+@import "bootstrap/css/bootstrap";
 
 body {
     background: #fff;
@@ -418,9 +419,9 @@ body {
   }
   
   #intro h1 {
-    color: orange;
+    color: #FFF;
     margin-bottom: 30px;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 700;
     overflow: hidden;
 
@@ -450,7 +451,7 @@ body {
   
   #intro p {
     margin: 0 auto 30px auto;
-    color: orange;
+    color: #FFF;
     font-weight: 700;
     font-size: 18px;
   }
@@ -1678,4 +1679,10 @@ h1, h3 {
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
   border: none;
   margin-right: 10px;
+}
+
+.carousel-caption {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  border-radius: 5px;
+  padding: 1rem;
 }
