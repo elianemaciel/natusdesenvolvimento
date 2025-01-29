@@ -142,25 +142,6 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'natusdesenvolvimento.site@gmail.com'
-EMAIL_HOST_PASSWORD = 'Natus@21'
-
-EMAIL_USE_TLS: True
-EMAIL_USE_SSL: False
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hvjlnivrz',
-    'API_KEY': '136635133744894',
-    'API_SECRET': 'uRKR7Yzboa6FgUa4HSF4CLfCZXk',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
 
 import socket
 if socket.gethostname()=="eliane-acer":
